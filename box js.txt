@@ -1,0 +1,28 @@
+<style>
+    div{
+        background-color: black;
+        width: 100px;
+        height: 100px;
+    }
+    h1{
+        color: red;
+    }
+</style>
+<div id="box">
+    <center>
+ <h1 id="text" >hello</h1>
+    </center>
+
+</div>
+<button onclick="change()">change</button>
+<script>
+    var boxs=document.getElementById("box")
+    var t=document.getElementById("text")
+    function change()
+    {
+    boxs.style.backgroundColor="red"
+    t.style.color="black"
+
+
+    }
+</script>
