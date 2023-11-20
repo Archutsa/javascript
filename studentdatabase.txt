@@ -1,0 +1,159 @@
+// Student DataBase .HTML  
+<html>
+<head>
+    <title>Student form</title>
+    <link rel="Stylesheet" href="style.css">
+</head>
+<body>
+    <center>
+   <h1> STUDENT FORM</h1>
+    </center>
+    <center>
+<div>
+<from >
+    <table border="1">
+        <tr>
+            <td><h3>Name</h3></td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td><h3>Age</h3></td>
+            <td><input type="number" id="age"></td>
+        </tr>
+        <tr>
+            <td><h3>Gender</h3></td>
+            <td  id="genders" >
+              
+                
+                 <input  id="r1" type="radio" name="gender"   value="Male"  >Male
+                    <input id="r2" type="radio" name="gender"   value="Female">Female   
+            
+        
+                
+            </td>
+        </tr>
+            <tr>
+                <td><h3>Course</h3></td>
+                <td>
+                    <select id="course">
+                        <option>javascirpt</option>
+                        <option>c++</option>
+                        <option>java</option>
+                        <option>python</option>
+                        <option>HTML</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td><h3>Email</h3></td>
+                <td><input type="email" id="email"></td>
+             </tr>
+            
+            
+
+
+    </table>
+    
+</from>
+<button  onclick="save(event)">save</button>
+</div>
+</center>
+
+    <table id="one" border="1">
+        <thead>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Course</th>
+            <th>Email</th>
+            <th>Action</th>
+        </thead>
+        <tbody id="bodys">
+
+        </tbody>
+ 
+    </table>
+   <script>
+        var tables=document.getElementById("one")
+        var n=document.getElementById("name")
+        var a=document.getElementById("age")
+        var ge=document.getElementsByName("gender")
+        var c=document.getElementById("course")
+        var e=document.getElementById("email")
+         
+        function save()
+        {
+           let ta=document.getElementById("bodys")
+            
+           var row=document.createElement("tr")
+
+           let c1=document.createElement("td")
+           let c2=document.createElement("td")
+           let c3=document.createElement("td")
+           let c4=document.createElement("td")
+           let c5=document.createElement("td")
+           let c6=document.createElement("td")
+
+           c1.innerText=n.value
+           c2.innerText=a.value
+           c3.innerHTML=document.querySelector('input[name="gender"]:checked').value
+           c4.innerText=c.value
+           c5.innerText=e.value
+           c6.innerHTML="<button class='btns' onclick='return this.parentNode.parentNode.remove();'   >Delete</button>"
+
+
+           row.append(c1)
+           row.append(c2)
+           row.append(c3)
+           row.append(c4)
+           row.append(c5)
+           row.append(c6)
+
+           ta.append(row)
+         
+          
+
+        }
+      
+    </script>
+
+</body>
+</html>
+
+
+
+//Style.css
+
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+button{
+    background-color: aqua;
+    color: black;
+    text-align: center;
+    width: 220px;
+
+}
+div
+{
+    border:solid;
+    border-color: rgb(177, 177, 155);
+    display: inline-block;
+    padding: 5px;
+}
+#ones
+{
+    border-color: rgb(184, 201, 201);
+    
+}
+.btns
+{
+    
+    background-color: red;
+    color:white;
+    
+}
